@@ -1,5 +1,5 @@
 import React from "react";
-import { MEDICATION_MEMBER_2 } from "../data";
+import { MEDICATION_MEMBER_1, MEDICATION_MEMBER_2 } from "../data";
 import './medication-manager.css';
 
 function WideInfoTile(props) {
@@ -16,18 +16,25 @@ function WideInfoTile(props) {
 class MedicationManager extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      select: MEDICATION_MEMBER_2[0],
-      selectedIndex: 0,
-      items: MEDICATION_MEMBER_2.medications,
-      infoTiles: MEDICATION_MEMBER_2.tiles
+    const paths = window.location.pathname.split('/');
+    const memberId = paths[paths.length - 1];
+    this.member = MEDICATION_MEMBER_1;
+    if (memberId.includes("2")) {
+      this.member = MEDICATION_MEMBER_2;
     }
-    this.handleChange = this.handleChange.bind(this)
+
+    this.state = {
+      select: this.member[0],
+      selectedIndex: 0,
+      items: this.member.medications,
+      infoTiles: this.member.tiles
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
     this.setState({
-      select: MEDICATION_MEMBER_2[event.target.selectedIndex],
+      select: this.member[event.target.selectedIndex],
       selectedIndex: event.target.selectedIndex,
     });
     if (this.props.onChange) {

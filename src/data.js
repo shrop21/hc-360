@@ -3,28 +3,23 @@ export const MEDICATION_MEMBER_1 = {
   medications: [
     {
       name: "Livalo",
-      dosage: "mg",
-      treatment: ""
+      dosage: "2mg",
+      treatment: "Hyperlipidemia"
     },
     {
       name: "Synthroid",
-      dosage: "mg",
-      treatment: ""
+      dosage: "25mcg",
+      treatment: "Hypothyroidism"
     },
     {
       name: "Levoxyl",
-      dosage: "1",
-      treatment: ""
+      dosage: "25mcg",
+      treatment: "Hypothyroidism"
     },
     {
       name: "Amiodarone",
-      dosage: "mg",
-      treatment: ""
-    },
-    {
-      name: "Tocainide",
-      dosage: "mg",
-      treatment: ""
+      dosage: "150mg",
+      treatment: "Arrhythmia"
     }
   ],
   tiles: [
